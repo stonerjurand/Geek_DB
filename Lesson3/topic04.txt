@@ -1,0 +1,14 @@
+#Урок 4
+#Задание 1
+
+SELECT AVG(TIMESTAMPDIFF(YEAR, birthday_at, NOW())) AS avg_age FROM users;
+
+
+#Задание 2
+
+SELECT 
+DAYOFWEEK(DATE_FORMAT(birthday_at, '2019-%m-%d')) AS week_day,
+COUNT(*) AS count_of_birthdays
+FROM users 
+GROUP BY week_day
+ORDER BY week_day;
